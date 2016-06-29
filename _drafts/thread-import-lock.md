@@ -234,7 +234,7 @@ def __import__(name, globals=None, locals=None, fromlist=None):
             fp.close()
 ```
 
-Nothing very fancy here, return the module if it has already been imported and so is into `sys.modules` or try to locate the source file for the module, load it and return it.
+Nothing very fancy here: return the module from `sys.modules` if it has already been imported or try to locate the source file for the module, load it and return it.
 
 Nothing should block here either, but if we continue to read the `imp` module documentation, we can find a [very interesting function named `lock_help`](https://docs.python.org/2/library/imp.html#imp.lock_held) that says:
 
